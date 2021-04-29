@@ -32,7 +32,7 @@ const PageList = (argument = "") => {
   const render = () => {
     pageContent.innerHTML = `
       <section class="page-list">
-        <div class="articles">...loading</div>
+        <divclass="articles"><span id="loading">LOADING</span></div>
       </section>
     `;
 

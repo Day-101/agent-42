@@ -10,6 +10,14 @@ body{
   padding: 0;
   background: $dark-light;
 }
+#loading{
+  font-size: 3em;
+  font-weight: bold;
+  color: $white;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
 
 header {
   font-family: 'Open Sans', sans-serif;
@@ -18,14 +26,13 @@ header {
     display: flex;
     flex-wrap: wrap;
   }
-
-  #brand{
-    font-size: 2.2em;
-    font-weight: 700;
-    text-decoration: none;
-    color: $red;
-    flex-grow: 1;
-  }
+    #brand{
+      font-size: 2.2em;
+      font-weight: 700;
+      text-decoration: none;
+      color: $red;
+      flex-grow: 1;
+    }
 
   img{
     padding: 0 8px;

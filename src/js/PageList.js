@@ -11,7 +11,7 @@ const PageList = (argument = "") => {
         hideWelcome();
         console.log(finalURL);
       }else{
-        finalURL = url + apikey + "&dates=2021-04-26,2022-12-31" // revoir pour insérer une variable à la date du jour
+        finalURL = url + apikey + "&dates=2021-04-30,2022-12-31" // revoir pour insérer une variable à la date du jour
         console.log(finalURL);
         showWelcome();
       }
@@ -19,8 +19,9 @@ const PageList = (argument = "") => {
       fetch(`${finalURL}`)
         .then((response) => response.json())
         .then((response) => {
+          console.log(response);
           response.results.forEach((article) => {
-            console.log(argument);
+            // console.log(argument);
             articles += `
               <div class="cardGame">
                 <a href="#pagedetail/${article.id}">
@@ -49,7 +50,7 @@ const PageList = (argument = "") => {
     if (stores){
       stores.forEach((s) => {
         str += '<img class="stores-logos" src="src/images/logos/' + s.store.slug +'.svg">'
-        console.log(s.store.slug);
+        // console.log(s.store.slug);
       })
     }
     return str
@@ -58,7 +59,7 @@ const PageList = (argument = "") => {
   const render = () => {
     pageContent.innerHTML = `
       <section class="page-list">
-        <div class="articles">...loading</div>
+        <div class="articles"><span id="loading">LOADING</span></div>
       </section>
     `;
 

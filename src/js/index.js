@@ -14,11 +14,12 @@ const setRoute = () => {
   return true;
 };
 let searchButton = document.querySelector("a#search");
-searchButton.onclick = PageList;
+searchButton.addEventListener('click', PageList)
+// searchButton.onclick = PageList;
 
 let brand = document.querySelector("a#brand");
-console.log(brand);
-brand.onclick = PageList;
+brand.addEventListener('click', PageList)
+// brand.onclick = PageList;
 
 window.addEventListener("DOMContentLoaded", () => setRoute());
 window.addEventListener("hashchange", () => setRoute());

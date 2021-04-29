@@ -32,7 +32,7 @@ const PageList = (argument = "") => {
                 <a href="#pagedetail/${article.id}"><h1>${article.name}</h1></a>
                 <span></span>
                 <div class="logos-stores">
-                  ${storeSlug(article.stores)}
+                  ${platformSlug(article.parent_platforms)}
                 </div>
               </div>
               `
@@ -45,11 +45,11 @@ const PageList = (argument = "") => {
     fetchList("https://api.rawg.io/api/games", cleanedArgument);
   };
 
-  const storeSlug = (stores) => { // ajouter une vérification de doublon
+  const platformSlug = (plats) => { // ajouter une vérification de doublon
     let str = ""
-    if (stores){
-      stores.forEach((s) => {
-        str += '<img class="stores-logos" src="src/images/logos/' + s.store.slug +'.svg">'
+    if (plats){
+      plats.forEach((p) => {
+        str += '<img class="stores-logos" src="src/images/logos/' + p.platform.slug +'.svg">'
         // console.log(s.store.slug);
       })
     }

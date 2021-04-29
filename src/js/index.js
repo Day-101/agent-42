@@ -1,6 +1,7 @@
-import "bootstrap";
 import "../sass/style.scss";
 import { routes } from "./routes";
+import { PageList } from "./PageList";
+// import { PageDetail } from "./PageDetail";
 
 var pageArgument;
 
@@ -12,6 +13,12 @@ const setRoute = () => {
   routes[path[0]](pageArgument);
   return true;
 };
+let searchButton = document.querySelector("a#search");
+searchButton.onclick = PageList;
 
-window.addEventListener("hashchange", () => setRoute());
+let brand = document.querySelector("a#brand");
+console.log(brand);
+brand.onclick = PageList;
+
 window.addEventListener("DOMContentLoaded", () => setRoute());
+window.addEventListener("hashchange", () => setRoute());

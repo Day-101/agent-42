@@ -5,8 +5,9 @@ const PageList = (argument = "") => {
 
     const fetchList = (url, argument) => {
       let finalURL = url;
-      if (argument) {
-        finalURL = url + "?search=" + argument;
+      if (argument == "") {
+        console.log("no argument");
+        //        finalURL = url + "?search=" + argument;
       }
 
       fetch(`${finalURL}`)
